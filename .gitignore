@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch Model Checkpoints & Large Model Weights
+*.pth
+*.pt
+*.ckpt
+checkpoints/
+saved_models/
+
+# Dataset Files & Downloads
+tomato_dataset/
+data/
+dataset/
+*.zip
+*.tar.gz
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook Cache
+.ipynb_checkpoints/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs & Temporary Files
+*.log
+scratch/
