@@ -1,0 +1,47 @@
+# Configuration for Plant Disease Prediction Project
+
+dataset:
+  name: "vipoooool/new-plant-diseases-dataset"
+  local_path: "./tomato_dataset"
+  num_classes: 10
+  classes:
+    - "Tomato___Bacterial_spot"
+    - "Tomato___Early_blight"
+    - "Tomato___Late_blight"
+    - "Tomato___Leaf_Mold"
+    - "Tomato___Septoria_leaf_spot"
+    - "Tomato___Spider_mites Two-spotted_spider_mite"
+    - "Tomato___Target_Spot"
+    - "Tomato___Tomato_Yellow_Leaf_Curl_Virus"
+    - "Tomato___Tomato_mosaic_virus"
+    - "Tomato___healthy"
+
+transforms:
+  image_size: [224, 224]
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+  rotation_degrees: 10
+  flip_prob: 0.5
+
+training:
+  batch_size: 128
+  num_workers: 2
+  learning_rate: 0.001
+  epochs: 20
+  seed: 42
+  early_stopping_patience: 5
+  early_stopping_delta: 0.001
+  checkpoint_dir: "./checkpoints"
+
+models:
+  custom_cnn:
+    name: "CustomCNN"
+    conv_channels: [32, 64, 128]
+    fc_dim: 512
+    dropout: 0.4
+
+  resnet18:
+    name: "ResNet18"
+    freeze_backbone: true
+    fc_dim: 512
+    dropout: 0.4
